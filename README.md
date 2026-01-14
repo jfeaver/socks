@@ -11,6 +11,5 @@ As with any Rails app, install Ruby (3.4.8 used here), run `bundle install` and 
 This app is set up to be deployed on Fly.io. Create an account there, download the `flyctl` tool
 and run `flyctl launch` to deploy it for yourself.
 
-## Team
-
-This app was built by Mr. Feaver!
+## test
+Socks have colors
