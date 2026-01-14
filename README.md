@@ -13,4 +13,4 @@ and run `flyctl launch` to deploy it for yourself.
 
 ## Team
 
-This app was built by Mr. Feaver!
+This app was built by Diego
