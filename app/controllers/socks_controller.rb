@@ -68,3 +68,10 @@ class SocksController < ApplicationController
       params.expect(sock: [ :name, :description, :gender, :age, :height, :color ])
     end
 end
+
+=begin
+I think this file connects the model and the views
+I don't understand how respond_to and format.html work
+I also don't understand set_sock and sock_params fully
+=end
+

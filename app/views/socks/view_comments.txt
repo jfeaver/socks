@@ -1,0 +1,7 @@
+General comments about the views:
+
+I was not sure how to add comments directly inside the HAML files, so I am writing here instead.
+
+I think this files that are in the folder are the pages or forms the user interacts with
+I don't fully understand what HAML is, but it looks like HTML with Ruby
+I don't understand how form_with works
