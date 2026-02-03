@@ -91,6 +91,9 @@
   sock.save
 end
 
-[[1, 4], [3, 7]].each do |match_id_1, match_id_2|
+[
+  [ 1, 4 ],
+  [ 3, 7 ]
+].each do |match_id_1, match_id_2|
   Match.find_or_create_by(sock_1_id: match_id_1, sock_2_id: match_id_2)
 end

@@ -8,7 +8,7 @@ class Sock < ApplicationRecord
            class_name: "Match",
            foreign_key: :sock_2_id,
            dependent: :destroy
-  
+
   def match
     # NOTE: Should "Match" actually be named "Pair"? I think of `sock.match` returning the other sock.
     Match.find_by("sock_1_id = :id OR sock_2_id = :id", id: id)
