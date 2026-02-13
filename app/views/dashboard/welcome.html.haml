@@ -1,5 +1,9 @@
 - content_for :title, "Dashboard"
 
+%div
+  - @proposals.each do
+    %p proposal waiting
+
 %h1 Dashboard
 
 %div{id: "socks"}
