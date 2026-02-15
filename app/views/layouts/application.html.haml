@@ -16,6 +16,6 @@
   %body
     %div
       = button_to("Sign Out", destroy_user_session_path, :method => :delete)
-    %p.notice= notice
-    %p.alert= alert
+    %p.notice{ style: "color: green" }= notice
+    %p.alert{ style: "color: red" }= alert
     = yield
