@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-  constraints format: :html do
-    # Defines the root path route ("/")
+  # Defines the root path route ("/")
+  # root "welcome#index"
+  authenticated :user do
+    root "dashboard#welcome", as: :authenticated_root
+  end
+
+  unauthenticated do
     root "welcome#index"
+  end
 
-    get "app", to: "dashboard#welcome"
-
+  constraints format: :html do
     resources :socks, except: :index do
-      resources :matches
-      resources :proposals
+      resources :matches, only: [ :new, :create ]
+      resources :proposals, only: [ :new, :create ]
     end
 
     devise_for :users
