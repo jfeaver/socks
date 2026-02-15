@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # Defines the root path route ("/")
-  # root "welcome#index"
   authenticated :user do
     root "dashboard#welcome", as: :authenticated_root
   end
@@ -13,6 +12,10 @@ Rails.application.routes.draw do
     resources :socks, except: :index do
       resources :matches, only: [ :new, :create ]
       resources :proposals, only: [ :new, :create ]
+    end
+
+    resources :proposals, only: [ :update ] do
+      resources :accepts, only: :create, module: :proposals
     end
 
     devise_for :users

@@ -3,5 +3,10 @@ class Proposal < ApplicationRecord
   belongs_to :sock
   belongs_to :proposed_sock, class_name: "Sock"
 
-  scope :to_owner, ->(owner) { joins(:proposed_sock).where(socks: { owner: owner }) }
+  scope :active, -> { where(accepted_at: nil, declined_at: nil) }
+  scope :sent_to, ->(owner) { active.joins(:proposed_sock).where(socks: { owner: owner }) }
+
+  def decline!
+    touch(:declined_at)
+  end
 end
