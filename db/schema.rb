@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_12_160731) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_15_200728) do
   create_table "matches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "sock_1_id"
@@ -21,7 +21,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_12_160731) do
   end
 
   create_table "proposals", force: :cascade do |t|
+    t.datetime "accepted_at"
     t.datetime "created_at", null: false
+    t.datetime "declined_at"
     t.integer "proposed_sock_id", null: false
     t.integer "sock_id", null: false
     t.datetime "updated_at", null: false
