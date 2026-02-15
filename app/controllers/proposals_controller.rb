@@ -10,7 +10,7 @@ class ProposalsController < ApplicationController
 
   # This action creates a new proposed match between two socks.
   def create
-    @proposal = Proposal.new(sock_1_id: params[:sock_id], sock_2_id: params[:proposal][:proposed_sock_id])
+    @proposal = Proposal.new(sock_id: params[:sock_id], proposed_sock_id: params[:proposal][:proposed_sock_id])
     # Save the proposed match to the database
     @proposal.save!
     redirect_to @sock, notice: "Proposed match was successfully created."
