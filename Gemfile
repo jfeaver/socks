@@ -50,11 +50,19 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Testing
+  gem "rspec-rails", "~> 6.0.0"
+  gem "factory_bot_rails", "~> 6.5"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+end
+
+group :test do
+  gem "faker", "~> 3.6"
 end
 
 gem "dockerfile-rails", ">= 1.7", group: :development
